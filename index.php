@@ -1,4 +1,7 @@
-<?php include 'inc/inc.functions.php'; ?>
+<?php
+    // Import des fonctions
+    include 'inc/inc.functions.php';
+?>
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -16,7 +19,8 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
-				<?php 
+				<?php
+                    // Chargement du template de page
 					getPageTemplate(
 						array_key_exists('page', $_GET) ? $_GET['page'] : null
 					); 
