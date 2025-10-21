@@ -1,12 +1,13 @@
 <?php 
 	$message = null;
-	if($_SERVER["RQUEST_METHOD"] == "POST"){
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
 	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
-	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
+	    		$_SESSION['User'] = connectUser($_POST['login'], $_POST['password']);
 
 	    		if(!is_null($_SESSION['User'])){
 	    			header("Location:index.php");
+                    exit();
 	    		}else{
 	    			$message = "Mauvais login ou mot de passe";
 	    		}
@@ -21,7 +22,7 @@
 			<section>
 				<header>
 					<h3>Se connecter</h3>
-					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a></li>
+					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a>
 				</header>
 				<div class="content">
 					<?php echo (!is_null($message) ? "<p>".$message."</p>" : '');?>
