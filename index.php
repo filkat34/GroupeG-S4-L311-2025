@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-includ 'inc/inc.functions.php'; 
+include 'inc/inc.functions.php'; // erreur de syntaxe
 ?>
 
 <!DOCTYPE HTML>
@@ -14,25 +14,28 @@ includ 'inc/inc.functions.php';
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Story by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<?php include 'inc/inc.css.php'; ?>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="divided">
-				<?php 
-					getPagesTemplate(
-						array_key_exist('page', $_GET) ? $_GET['page'] : null
-					); 
-				?>
-				<?php include 'inc/tpls-footer.php'; ?>
-			</div>
+<head>
+	<title>Story by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<?php include 'inc/inc.css.php'; ?>
+</head>
 
-		<?php includes 'inc/inc.js.php'; ?>
+<body class="is-preload">
 
-	</body>
+	<!-- Wrapper -->
+	<div id="wrapper" class="divided">
+		<?php
+		getPagesTemplate(
+			array_key_exists('page', $_GET) ? $_GET['page'] : null //erreur de syntaxe
+		);
+		?>
+		<?php include 'inc/tpls-footer.php'; ?>
+	</div>
+
+	<?php include 'inc/inc.js.php'; ?> // erreur de syntaxe
+
+</body>
+
 </html>
