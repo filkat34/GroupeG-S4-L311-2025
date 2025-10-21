@@ -11,12 +11,15 @@
 	</div>
 </section>
 
-<?php 
+<?php
+    // Chargement des articles du blog
 	$_articles = getArticlesFromJson();
 
 	if($_articles && count($_articles)){
+        // Compteur pour alterner les articles entre un affichage à droite et à gauche
 		$compteur = 1;
 		foreach($_articles as $article){
+            // Alternance des article entre un affichage à droite et à gauche
 			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
 			?>
 				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" <?php if($compteur == 1) { echo 'id="first"'; } ?>>
@@ -33,6 +36,7 @@
 				</section>
 
 			<?php
+            // Incrémentation du compteur pour l'article suivant
             $compteur++;
 		}
 	}
