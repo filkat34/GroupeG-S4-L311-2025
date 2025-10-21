@@ -1,4 +1,12 @@
-<?php includ 'inc/inc.functions.php'; ?>
+<?php
+// Activation de l'affichage des erreurs
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+includ 'inc/inc.functions.php'; 
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
