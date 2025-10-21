@@ -18,7 +18,7 @@
 		$compteur = 1;
 		foreach($_articles as $article){
 			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-			##$compteur++;
+			$compteur++;
 			?>
 				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
 					<div class="content">
@@ -29,7 +29,7 @@
 						</ul>
 					</div>
 					<div class="image">
-						<img src="<?php echo $art_icle['image'];?>" alt="" />
+						<img src="<?php echo $article['image'];?>" alt="" />
 					</div>
 				</section>
 
