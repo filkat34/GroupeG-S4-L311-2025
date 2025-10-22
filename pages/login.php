@@ -1,5 +1,4 @@
 <?php
-session_start(); // Ajout session_start() avant d'utiliser $_session sinon ça ne démarrera pas la session
 $message = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //correction erreur de syntaxe
 	if (array_key_exists('login', $_POST) && array_key_exists('password', $_POST)) {
