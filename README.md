@@ -52,6 +52,10 @@ Nous avons établi ci-dessous une typologie des erreurs trouvées avec quelques 
 |``` include 'inc/tpls-footer.php';``` |``` include 'inc/tpl-footer.php'``` | Correction du nom de fichier (suppression du 's')|
 
 ### Syntaxe
+| Bug | Correction | Explication |
+| :----- | :------ | :------  |
+|``` function getArticleById($id_article == null) ``` |``` function getArticleById($id_article = null)``` | Remplacement de l'opérateur de comparaison == par l'assignation =|
+|```##$compteur++; ``` |``` $compteur++;``` |Suppression du commentaire incorrect empêchant l’exécution du code commenté|
 
 ### Typographie
 
