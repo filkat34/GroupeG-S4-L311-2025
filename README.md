@@ -50,6 +50,7 @@ Nous avons établi ci-dessous une typologie des erreurs trouvées avec quelques 
 | :----- | :------ | :------  |
 |```define('DB_ARTICLES', TL_ROOT.'/dbal/articles.json');``` |```define('DB_ARTICLES', TL_ROOT.'/db/articles.json');``` |Correction du chemin de dossier de _/dbal/_ vers _db_ pour correspondre à la structure réelle du projet |
 |``` include 'inc/tpls-footer.php';``` |``` include 'inc/tpl-footer.php'``` | Correction du nom de fichier (suppression du 's')|
+|```header('Location:indx.php' ``` |```header('Location:index.php')``` | Correction du nom du fichier (ajout du 'e') |
 
 ### Syntaxe
 | Bug | Correction | Explication |
