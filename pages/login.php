@@ -3,7 +3,7 @@ $message = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //correction erreur de syntaxe
 	if (array_key_exists('login', $_POST) && array_key_exists('password', $_POST)) {
 		if (!empty($_POST['login']) && !empty($_POST['password'])) {
-			$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
+			$_SESSION['User'] = connectUser($_POST['login'], $_POST['password']); // Correction de la méthode de récupération du login pour rester cohérent
 
 			if (!is_null($_SESSION['User'])) {
 				header("Location:index.php");
