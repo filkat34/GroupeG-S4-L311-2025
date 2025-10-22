@@ -23,17 +23,17 @@ if ($_articles && count($_articles)) {
 		<section class="spotlight style1 orient-<?php echo $classCss; ?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
 			<div class="content">
 				<h2><?php echo $article['titre']; ?></h2>
-				<p><?php echo $article['titre']; ?></p>
+				<p><?php echo $article['texte']; ?></p> <!-- correction variable json -->
 				<ul class="actions stacked">
 					<li><a href="?page=article&id=<?php echo $article['id']; ?>" class="button">Lire la suite</a></li>
 				</ul>
 			</div>
 			<div class="image">
-				<img src="<?php echo $article['image']; ?>" alt="" /> // correction variable mal écrite
-			</div>
-		</section>
+				<img src="<?php echo $article['image'];
+							?>" alt=""
+					</section> <!-- correction variable mal écrite -->
 
-<?php
+		<?php
 	}
 }
-?>
+		?>
