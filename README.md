@@ -56,7 +56,7 @@ Nous avons établi ci-dessous une typologie des erreurs trouvées avec quelques 
 | Bug | Correction | Explication |
 | :----- | :------ | :------  |
 |``` function getArticleById($id_article == null) ``` |``` function getArticleById($id_article = null)``` | Remplacement de l'opérateur de comparaison == par l'assignation =|
-|```##$compteur++; ``` |``` $compteur++;``` |Suppression du commentaire incorrect empêchant l’exécution du code commenté|
+|```##$compteur++; ``` |``` $compteur++;``` |Suppression du commentaire empêchant l’exécution du code |
 
 ### Typographie
 
