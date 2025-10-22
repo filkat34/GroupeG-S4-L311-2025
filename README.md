@@ -77,7 +77,7 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 ## Tests fonctionnels manuels
 | Fonctionnalité/Branche | Mathilde | Kamo | Mathieu | Filippos |   
 | :---|:---:|:---:| :---:| :---:|
-¬| La page d'accueil s'affiche sans erreurs PHP | | | |✅ |
+| La page d'accueil s'affiche sans erreurs PHP | | | |✅ |
 | Les CSS et JS se chargent correctement (pas d'erreurs 404 dans la console) | | | |✅ |
 | Les images de la bannière s'affichent correctement | | | |✅ |
 | Le design est responsive | | | |✅ |
