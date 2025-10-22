@@ -1,18 +1,18 @@
-<?php 
-	$message = null;
-	if($_SERVER["RQUEST_METHOD"] == "POST"){
-	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
-	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
-	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
+<?php
+$message = null;
+if ($_SERVER["REQUEST_METHOD"] == "POST") { //correction erreur de syntaxe
+	if (array_key_exists('login', $_POST) && array_key_exists('password', $_POST)) {
+		if (!empty($_POST['login']) && !empty($_POST['password'])) {
+			$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
 
-	    		if(!is_null($_SESSION['User'])){
-	    			header("Location:index.php");
-	    		}else{
-	    			$message = "Mauvais login ou mot de passe";
-	    		}
-	    	}
-	    }
-	}	
+			if (!is_null($_SESSION['User'])) {
+				header("Location:index.php");
+			} else {
+				$message = "Mauvais login ou mot de passe";
+			}
+		}
+	}
+}
 ?>
 
 <section class="wrapper style1 align-center">
@@ -24,7 +24,7 @@
 					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a></li>
 				</header>
 				<div class="content">
-					<?php echo (!is_null($message) ? "<p>".$message."</p>" : '');?>
+					<?php echo (!is_null($message) ? "<p>" . $message . "</p>" : ''); ?>
 					<form method="post" action="#">
 						<div class="fields">
 							<div class="field half">
