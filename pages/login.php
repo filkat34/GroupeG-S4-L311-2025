@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //correction erreur de syntaxe
 
 			if (!is_null($_SESSION['User'])) {
 				header("Location:index.php");
+				exit(); //Ajout exit() avec header pour arrêt exécution du script après redirection
 			} else {
 				$message = "Mauvais login ou mot de passe";
 			}
