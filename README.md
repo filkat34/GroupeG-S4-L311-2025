@@ -68,14 +68,46 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 |``` sessions_destroy()``` |``` session_destroy()``` | Rectification de la faute de frappe dans l’appel de la fonction (suppression du _s_) |
 |```<img src="<?php echo $art_icle['image'];?>" alt="" />``` |```<img src="<?php echo $article['image'];?>" alt="" />``` | Correction du nom de la variable (suppression du _ )|
 
-
 ### Logique
 | Bug | Correction | Explication |
 | :----- | :------ | :------  |
 |``` if(is_null($article) OR !!!!count($article)) ``` |``` if(is_null($article) OR !count($article)) ``` | Simplification de la quadruple négation !!!! qui vaut affirmation en simple négation |
 |``` connectUser($_GET['login'], $_POST['password'])``` |``` connectUser($_POST['login'], $_POST['password'])``` | Correction de GET en POST car il s’agit d’envoyer des données vers le serveur pour vérifier si les identifiants sont corrects|
 
-
 ## Tests fonctionnels manuels
+| Fonctionnalité/Branche | Mathilde | Kamo | Mathieu | Filippos |   
+| :---|:---:|:---:| :---:| :---:|
+¬| La page d'accueil s'affiche sans erreurs PHP | | | |✅ |
+| Les CSS et JS se chargent correctement (pas d'erreurs 404 dans la console) | | | |✅ |
+| Les images de la bannière s'affichent correctement | | | |✅ |
+| Le design est responsive | | | |✅ |
+| Le titre "Mon [ blog ]." s'affiche correctement dans la bannière | | | | ✅|
+| Le texte de description s'affiche dans la bannière | | | |✅ |
+| Le bouton "Consulter mes articles" est visible dans la bannière | | | |✅|
+| Le bouton "Consulter mes articles" redirige vers le premier article | | | |✅|
+| L'image de bannière s'affiche | | | |✅ |
+| La liste des articles consultables s’affiche correctement| | | |✅ |
+| Chaque article affiche son titre | | | |✅ |
+| Chaque article affiche un extrait (et non le titre dupliqué) | | | |✅ |
+| Chaque article affiche son image | | | | ✅|
+| Les articles alternent entre orientation gauche/droite | | | |✅ |
+| Le bouton "Lire la suite" est présent pour chaque article | | | |✅ |
+| Le bouton "Lire la suite" renvoie correctement vers la page de l’article concerné | | | |✅ |
+| Le titre de l'article s'affiche correctement sur la page de l’article | | | |✅ |
+| Le texte complet s'affiche sur la page de l’article | | | | ✅|
+| L'image s'affiche sur la page de l’article | | | |✅ |
+| Le bouton "Revenir à l'accueil" est présent sur la page de l’article | | | |✅ |
+| Le bouton "Revenir à l'accueil" redirige vers l’accueil sur la page de l’article | | | |✅ |
+| Le bouton "Se connecter" s’affiche sur la page d’accueil et sur la page d’un article ouvert | | | |✅ |
+| Le formulaire de connexion s’ouvre quand on clique sur "Se connecter" | | | |✅ |
+| Le formulaire de connexion s'affiche correctement | | | |✅ |
+| Les champs "Nom d'utilisateur" et "Mot de passe" sont présents dans le formulaire de connexion | | | |✅ |
+| Le bouton "Se connecter" est présent | | | | ✅|
+| Le bouton "Revenir à l'accueil" dans le formulaire de connexion fonctionne | | | |✅ |
+| Connexion réussie avec login: _UEL311_ et password: _U31311_ | | | |✅ |
+| Après connexion réussie, redirection vers l'accueil mais avec le bouton "Se déconnecter" qui apparaît en haut à droite | | | |✅ |
+| Connexion avec mauvais login/password affiche le message "Mauvais login ou mot de passe" | | | |✅ |
+| Cliquer sur « Se déconnecter » déclenche la déconnexion et redirige vers l'accueil avec le bouton qui change en "Se connecter" | | | |✅ |
+
 
 ## Bilan et perspectives
