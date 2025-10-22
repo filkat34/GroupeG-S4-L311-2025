@@ -29,7 +29,7 @@ if ($_articles && count($_articles)) {
 				</ul>
 			</div>
 			<div class="image">
-				<img src="<?php echo $art_icle['image']; ?>" alt="" />
+				<img src="<?php echo $article['image']; ?>" alt="" /> // correction variable mal écrite
 			</div>
 		</section>
 
