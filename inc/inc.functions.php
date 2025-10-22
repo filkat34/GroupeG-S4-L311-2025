@@ -22,7 +22,7 @@ function connectUser($login = null, $password = null)
 function setDisconnectUser()
 {
     unset($_SESSION['User']);
-    sessions_destroy();
+    session_destroy(); // correction erreur de syntaxe
 }
 
 function isConnected()
