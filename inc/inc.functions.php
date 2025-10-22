@@ -50,9 +50,9 @@ function getPageTemplate($page = null)
 
 function getArticlesFromJson()
 {
-    if (file_exists(DB_ARTICLE)) // correction erreur de syntaxe
+    if (file_exists(DB_ARTICLES)) // correction erreur de syntaxe file_exsits et DB_ARTICLES
     {
-        $contenu_json = file_get_contents(DB_ARTICLE);
+        $contenu_json = file_get_contents(DB_ARTICLES); // correcteur erreur syntaxe DB_ARTICLES
         return json_decode($contenu_json, true);
     }
 
@@ -61,8 +61,8 @@ function getArticlesFromJson()
 
 function getArticleById($id_article = null)
 { // correction erreur de syntaxe, pas une condition
-    if (file_exists(DB_ARTICLE)) {
-        $contenu_json = file_get_contents(DB_ARTICLE);
+    if (file_exists(DB_ARTICLES)) { // correction erreur de syntaxe DB_ARTICLES
+        $contenu_json = file_get_contents(DB_ARTICLES); //correction erreur de syntaxe DB_ARTICLES
         $_articles    = json_decode($contenu_json, true);
 
         foreach ($_articles as $article) {
