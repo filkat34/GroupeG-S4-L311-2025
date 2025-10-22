@@ -46,6 +46,9 @@ Pour identifier et corriger les problèmes, plusieurs méthodes de debug ont ét
 Nous avons établi ci-dessous une typologie des erreurs trouvées avec quelques exemples pour chacune d'entre elles. Il s'agit bien d'une typologie et non d'une liste exhaustive de toutes les erreurs corrigées.
 
 ### Fichiers
+| Bug | Correction | Explication |
+| :----- | :------ | :------  |
+|``` define('DB_ARTICLES', TL_ROOT.'/dbal/articles.json');<br/> ```` |``` define('DB_ARTICLES', TL_ROOT.'/db/articles.json');```` |Correction du chemin de dossier de _/dbal/_ vers _db_ pour correspondre à la structure réelle du projet |
 
 ### Syntaxe
 
