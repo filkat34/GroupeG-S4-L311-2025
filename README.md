@@ -54,7 +54,7 @@ Pour identifier et corriger les problèmes, plusieurs méthodes de debug ont ét
 
 ### Xdebug
 
-L'essentiel des bugs a été identifié grâce à l'outil Xdebug qui fournit des informations très précises sur l'origine des erreurs. A titre d'exemples, voici quelques captures d'écran concernant trois types d'erreurs différents :
+L'essentiel des bugs a été identifié grâce à l'outil _Xdebug_ qui fournit des informations très précises sur l'origine des erreurs. A titre d'exemples, voici quelques captures d'écran concernant trois types d'erreurs différents :
 
 #### Une coquille sur le nom d'une variable
 
