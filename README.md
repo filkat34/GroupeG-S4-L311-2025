@@ -48,14 +48,18 @@ Nous avons établi ci-dessous une typologie des erreurs trouvées avec quelques 
 ### Fichiers
 | Bug | Correction | Explication |
 | :----- | :------ | :------  |
-|```define('DB_ARTICLES', TL_ROOT.'/dbal/articles.json');<br/>``` |```define('DB_ARTICLES', TL_ROOT.'/db/articles.json');``` |Correction du chemin de dossier de _/dbal/_ vers _db_ pour correspondre à la structure réelle du projet |
-|``` include 'inc/tpls-footer.php';<br/>``` |``` include 'inc/tpl-footer.php'``` | Correction du nom de fichier (suppression du 's')|
+|```define('DB_ARTICLES', TL_ROOT.'/dbal/articles.json');``` |```define('DB_ARTICLES', TL_ROOT.'/db/articles.json');``` |Correction du chemin de dossier de _/dbal/_ vers _db_ pour correspondre à la structure réelle du projet |
+|``` include 'inc/tpls-footer.php';``` |``` include 'inc/tpl-footer.php'``` | Correction du nom de fichier (suppression du 's')|
 
 ### Syntaxe
 
 ### Typographie
 
 ### Logique
+| Bug | Correction | Explication |
+| :----- | :------ | :------  |
+|``` if(is_null($article) OR !!!!count($article)) ``` |``` if(is_null($article) OR !count($article)) ``` | Simplification de la quadruple négation !!!! qui vaut affirmation en simple négation |
+
 
 ## Tests fonctionnels manuels
 
