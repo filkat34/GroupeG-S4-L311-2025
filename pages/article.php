@@ -3,7 +3,7 @@ $article = getArticleById(
 	array_key_exists('id', $_GET) ? $_GET['id'] : null
 );
 
-if (is_null($article) or !!!!count($article)) {
+if (is_null($article) or !count($article)) { //correction erreur de syntaxe trop de !
 	header('Location:index.php');
 	exit(); // ajout exit après header pour arrêter l'exécution du script
 }
