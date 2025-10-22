@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL); //suppression E_STRICT car compris dans E_ALL avec PHP8
 
 include 'inc/inc.functions.php'; // erreur de syntaxe
+include 'inc/inc.css.php'; // regroupement pour segmentation code
 ?>
 
 <!DOCTYPE HTML>
@@ -19,7 +20,6 @@ include 'inc/inc.functions.php'; // erreur de syntaxe
 	<title>Story by HTML5 UP</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<?php include 'inc/inc.css.php'; ?>
 </head>
 
 <body class="is-preload">
@@ -34,7 +34,8 @@ include 'inc/inc.functions.php'; // erreur de syntaxe
 		<?php include 'inc/tpls-footer.php'; ?>
 	</div>
 
-	<?php include 'inc/inc.js.php'; ?> // erreur de syntaxe
+	<?php include 'inc/inc.js.php'; // erreur de syntaxe 
+	?>
 
 </body>
 
