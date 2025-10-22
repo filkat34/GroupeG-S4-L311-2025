@@ -65,8 +65,8 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses, par
 | :----- | :------ | :------  |
 |```<?php includ 'inc/inc.functions.php'; ?> ``` |``` <?php include 'inc/inc.functions.php'; ?>``` | Ajout du _e_ à _include_ |
 |``` if($_SERVER["RQUEST_METHOD"] == "POST"``` |``` if($_SERVER["REQUEST_METHOD"] == "POST")``` | Correction du nom de la variable superglobale (ajout du _e_ à _REQUEST_ |
-|``` sessions_destroy()``` |``` session_destroy()``` | Rectification de la faute de frappe dans l’appel de la fonction (suppression du _s_ |
-|```<img src="<?php echo $art_icle['image'];?>" alt="" />``` |```<img src="<?php echo $article['image'];?>" alt="" />``` | Correction du nom de la variable (suppression du _|
+|``` sessions_destroy()``` |``` session_destroy()``` | Rectification de la faute de frappe dans l’appel de la fonction (suppression du _s_) |
+|```<img src="<?php echo $art_icle['image'];?>" alt="" />``` |```<img src="<?php echo $article['image'];?>" alt="" />``` | Correction du nom de la variable (suppression du _ )|
 
 
 ### Logique
