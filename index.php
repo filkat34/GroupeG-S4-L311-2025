@@ -31,7 +31,8 @@ include 'inc/inc.css.php'; // regroupement pour segmentation code
 			array_key_exists('page', $_GET) ? $_GET['page'] : null //erreur de syntaxe
 		);
 		?>
-		<?php include 'inc/tpls-footer.php'; ?>
+		<?php include 'inc/tpl-footer.php'; // correction chemin fichier
+		?>
 	</div>
 
 	<?php include 'inc/inc.js.php'; // erreur de syntaxe 
