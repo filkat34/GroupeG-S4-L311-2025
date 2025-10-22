@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //correction erreur de syntaxe
 			<section>
 				<header>
 					<h3>Se connecter</h3>
-					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a></li>
+					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a>
 				</header>
 				<div class="content">
 					<?php echo (!is_null($message) ? "<p>" . $message . "</p>" : ''); ?>
