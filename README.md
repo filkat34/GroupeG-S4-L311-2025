@@ -59,7 +59,7 @@ Nous avons établi ci-dessous une typologie des erreurs trouvées avec quelques 
 |```##$compteur++; ``` |``` $compteur++;``` |Suppression du commentaire empêchant l’exécution du code |
 
 ### Typographie
-Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses, parmi lesquelles notamment on retrouve surtout des coquilles dans les noms des  variables ou des fonctions.
+Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Parmi celles-ci, on retrouve surtout des coquilles dans les noms des variables et des fonctions.
 
 | Bug | Correction | Explication |
 | :----- | :------ | :------  |
