@@ -50,7 +50,8 @@ function getPageTemplate($page = null)
 
 function getArticlesFromJson()
 {
-    if (file_exist(DB_ARTICLE)) {
+    if (file_exists(DB_ARTICLE)) // correction erreur de syntaxe
+    {
         $contenu_json = file_get_contents(DB_ARTICLE);
         return json_decode($contenu_json, true);
     }
