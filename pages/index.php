@@ -23,7 +23,7 @@
 				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
 					<div class="content">
 						<h2><?php echo $article['titre'];?></h2>
-						<p><?php echo $article['titre'];?></p>
+						<p><?php echo substr($article['texte'], 0, 120) . '...';?></p>
 						<ul class="actions stacked">
 							<li><a href="?page=article&id=<?php echo $article['id'];?>" class="button">Lire la suite</a></li>
 						</ul>
