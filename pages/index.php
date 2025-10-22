@@ -17,8 +17,8 @@ $_articles = getArticlesFromJson();
 if ($_articles && count($_articles)) {
 	$compteur = 1;
 	foreach ($_articles as $article) {
-		$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-		// ##$compteur++ correction commentaire mal formé
+		$classCss = ($compteur % 2 == 0 ? 'left' : 'right'); //si compteur nombre pair alors left sinon right
+		$compteur++; //problème d'incrémentation
 ?>
 		<section class="spotlight style1 orient-<?php echo $classCss; ?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
 			<div class="content">
