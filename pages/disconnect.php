@@ -1,5 +1,5 @@
 <?php
 setDisconnectUser();
 
-header('Location:indx.php');
+header('Location:index.php'); //correction du chemin
 exit(); // ajout exit après header pour arrêter l'exécution du script
