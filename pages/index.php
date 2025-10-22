@@ -30,10 +30,11 @@ if ($_articles && count($_articles)) {
 			</div>
 			<div class="image">
 				<img src="<?php echo $article['image'];
-							?>" alt=""
-					</section> <!-- correction variable mal écrite -->
+							?>" alt="" />
+			</div>
+		</section> <!-- correction variable mal écrite -->
 
-		<?php
+<?php
 	}
 }
-		?>
+?>

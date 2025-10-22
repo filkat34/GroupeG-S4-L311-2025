@@ -17,7 +17,6 @@ if (is_null($article) or !count($article)) { //correction erreur de syntaxe trop
 		</ul>
 	</div>
 	<div class="image">
-		<img src="<?php echo $article['image']; // correction erreur syntaxe variable
-					?>" alt="" />
+		<img src="<?php echo $article['image']; ?>" alt="" /> <!-- correction erreur syntaxe variable -->
 	</div>
 </section>
