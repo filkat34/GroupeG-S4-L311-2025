@@ -15,7 +15,7 @@
   - 🔡 [Typographie](#typographie)
   - 📐 [Logique](#logique)
 - 🧪 [Tests fonctionnels manuels](#tests-fonctionnels-manuels)
-- 📈 [Bilan et perspectives](#bilan-et-perspectives)
+- 📈 [Bilan](#bilan)
 
 ## Membres du groupe
 
@@ -31,12 +31,17 @@
 - [x] Savoir utiliser le client git et la plateforme Github en vue de collaborer au sein d'une équipe de développement.
 
 ## Travail collaboratif
-
 ### Outils
+Le principal outil de collaboration utilisé est Github. Nous avons cloné le dépôt fourni et chaque membre de l'équipe a créé sa propre branche pour pouvoir travailler indépendamment. Nous avons également utilisé Teams pour faire une visio de code review.
 
 ### Principe général
+Le projet a été cloné sur un dépôt public github. Chaque membre a créé sa branche, procédé aux corrections jugées nécessaires sur celle-ci avant de faire une demande de tirage. Une visio de "Code review" est prévue en fin de semaine afin d'échanger autour des problèmes identifiés, corriger et harmoniser les approches.
 
 ## Planning de la semaine
+| Dates |  Objectif  |    
+| :---|:---| 
+| 20/10-24/10 | **Période de débogage** en priorité des erreurs assignées au développeur dans sa branche _bugfix/nomdudev_ |   
+| 25/10		  | **Code review en visio** pour discussion autour des pull requests, merge dans main et **finalisation de la rédaction du CR** dans le README.md de la branche main | 
 
 ## Méthodes de débogage
 Pour identifier et corriger les problèmes, plusieurs méthodes de debug ont été employées :
@@ -109,5 +114,4 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 | Connexion avec mauvais login/password affiche le message "Mauvais login ou mot de passe" | | | |✅ |
 | Cliquer sur « Se déconnecter » déclenche la déconnexion et redirige vers l'accueil avec le bouton qui change en "Se connecter" | | | |✅ |
 
-
-## Bilan et perspectives
+## Bilan
