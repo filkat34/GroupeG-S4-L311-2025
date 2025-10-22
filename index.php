@@ -2,7 +2,7 @@
 // Activation de l'affichage des erreurs
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL); //suppression E_STRICT car compris dans E_ALL avec PHP8
 
 include 'inc/inc.functions.php'; // erreur de syntaxe
 ?>
