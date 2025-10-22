@@ -56,14 +56,17 @@ Pour identifier et corriger les problèmes, plusieurs méthodes de debug ont ét
 
 L'essentiel des bugs a été identifié grâce à l'outil Xdebug qui fournit des informations très précises sur l'origine des erreurs. A titre d'exemples, voici quelques captures d'écran concernant trois types d'erreurs différents :
 
-- Une coquille sur le nom d'une variable
-  ![erreur : Undefined variable](screenshots/xdebug1.png)
+#### Une coquille sur le nom d'une variable
 
-- Une coquille dans le nom d'une fonction lors de son appel
-  ![erreur : Undefined function](screenshots/xdebug2.png)
+![erreur : Undefined variable](screenshots/xdebug1.png)
 
-- Une erreur de syntaxe confondant assignation et comparaison de variables
-  ![erreur Parse error](screenshots/xdebug3.png)
+#### Une coquille dans le nom d'une fonction lors de son appel
+
+![erreur : Undefined function](screenshots/xdebug2.png)
+
+#### Une erreur de syntaxe confondant assignation et comparaison de variables
+
+![erreur Parse error](screenshots/xdebug3.png)
 
 ## Typologie des erreurs
 
