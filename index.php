@@ -27,7 +27,7 @@ include 'inc/inc.css.php'; // regroupement pour segmentation code
 	<!-- Wrapper -->
 	<div id="wrapper" class="divided">
 		<?php
-		getPagesTemplate(
+		getPageTemplate( //correction erreur de syntaxe fonction
 			array_key_exists('page', $_GET) ? $_GET['page'] : null //erreur de syntaxe
 		);
 		?>
