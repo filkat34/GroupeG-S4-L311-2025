@@ -109,7 +109,7 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 
 Identifiant et mot de passe transmis en clair dans le payload lors de la requête POST.
 
-![erreur : Credentials security breach](screenshots/credentialsExposes.png)
+![erreur : Credentials security breach](screenshots/credentialsExposed.png)
 
 ## Tests fonctionnels manuels
 
