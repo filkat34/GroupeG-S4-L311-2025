@@ -14,6 +14,8 @@
   - 🧩 [Syntaxe](#syntaxe)
   - 🔡 [Typographie](#typographie)
   - 📐 [Logique](#logique)
+  - 🔐 [Sécurité](#sécurité)
+
 - 🧪 [Tests fonctionnels manuels](#tests-fonctionnels-manuels)
 - 📈 [Bilan](#bilan)
 
