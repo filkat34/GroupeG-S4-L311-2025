@@ -117,7 +117,7 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 | :--------------------------------------------- | :--------------------------------------------- | :---------------------------------------------------------------- |
 | `define('LOGIN', 'UEL311');define('PASSWORD', 'U31311');` | Création d'une table spécifique dans le dossier _db_ simulant la base de données : `users.json` + Encodage en base64 du payload de la forme contenant le login et le mot de passe avant transmission au serveur : `document.getElementById('secure_data').value = btoa(data);` | L'identifiant et le mot de passe étaient codés en dur côté serveur et transmis en clair depuis le client. L'encodage proposé offre un niveau de sécurité minimal. |
 
-![erreur : Credentials security breach](screenshots/credentialsExposed.png)
+![encodage64](screenshots/base64.png)
 
 ## Tests fonctionnels manuels
 
