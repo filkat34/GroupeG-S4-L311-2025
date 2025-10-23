@@ -106,7 +106,7 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 | `if(is_null($article) OR !!!!count($article))`     | `if(is_null($article) OR !count($article))`         | Simplification de la quadruple négation !!!! qui vaut affirmation en simple négation                                          |
 | ` connectUser($_GET['login'], $_POST['password'])` | ` connectUser($_POST['login'], $_POST['password'])` | Correction de GET en POST car il s’agit d’envoyer des données vers le serveur pour vérifier si les identifiants sont corrects |
 
-### Securité
+### Sécurité
 
 Identifiant et mot de passe transmis en clair dans le payload lors de la requête POST.
 
