@@ -70,7 +70,7 @@ L'essentiel des bugs a été identifié grâce à l'outil _Xdebug_ qui fournit d
 ![erreur Parse error](screenshots/xdebug3.png)
 
 ### Inspecteur du navigateur
-L'inspecteur du navigateur est toujours une référence précieuse lors des séances de débogage. Il a par exemple révélé une faille de sécurité majeure : le login et mot de passe sont transmis en claire vers le serveur ce qui rend possible leur interception.
+L'inspecteur du navigateur est toujours une référence précieuse lors des séances de débogage. Il a par exemple révélé une faille de sécurité majeure : le login et mot de passe sont transmis en clair vers le serveur, ce qui rend possible leur interception.
 
 ![erreur : Credentials security breach](screenshots/credentialsExposed.png)
 
