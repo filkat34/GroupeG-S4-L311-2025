@@ -69,6 +69,11 @@ L'essentiel des bugs a été identifié grâce à l'outil _Xdebug_ qui fournit d
 
 ![erreur Parse error](screenshots/xdebug3.png)
 
+### Inspecteur du navigateur
+L'inspecteur du navigateur est toujours une référence précieuse lors des séances de débogage. Il a par exemple révélé une faille de sécurité majeure : le login et mot de passe sont transmis en claire vers le serveur ce qui rend possible leur interception.
+
+![erreur : Credentials security breach](screenshots/credentialsExposed.png)
+
 ## Typologie des erreurs
 
 Nous avons établi ci-dessous une typologie des erreurs trouvées avec quelques exemples pour chacune d'entre elles. Il s'agit bien d'une typologie et non d'une liste exhaustive de toutes les erreurs corrigées.
@@ -108,7 +113,9 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 
 ### Sécurité
 
-Identifiant et mot de passe transmis en clair dans le payload lors de la requête POST.
+| Bug                                            | Correction                                     | Explication                                                       |
+| :--------------------------------------------- | :--------------------------------------------- | :---------------------------------------------------------------- |
+| `define('LOGIN', 'UEL311');define('PASSWORD', 'U31311');` | Création d'une table spécifique dans le dossier _db_ simulant la base de données : `users.json` + Encodage en base64 du payload de la forme contenant le login et le mot de passe avant transmission au serveur : `document.getElementById('secure_data').value = btoa(data);` | L'identifiant et le mot de passe étaient codés en dur côté serveur et transmis en clair depuis le client. L'encodage proposé offre un niveau de sécurité minimal. |
 
 ![erreur : Credentials security breach](screenshots/credentialsExposed.png)
 
@@ -146,6 +153,7 @@ Identifiant et mot de passe transmis en clair dans le payload lors de la requêt
 | Connexion réussie avec login: _UEL311_ et password: _U31311_                                                                   |    ✅     |      |    ✅   |    ✅    |
 | Après connexion réussie, redirection vers l'accueil mais avec le bouton "Se déconnecter" qui apparaît en haut à droite         |    ✅     |      |    ✅   |    ✅    |
 | Connexion avec mauvais login/password affiche le message "Mauvais login ou mot de passe"                                       |    ✅     |      |    ✅   |    ✅    |
+| Il est impossible de récupérer lors de la connexion le mot de passe depuis l'inspecteur du navigateur.                         |           |      |         |    ✅    |
 | Cliquer sur « Se déconnecter » déclenche la déconnexion et redirige vers l'accueil avec le bouton qui change en "Se connecter" |    ✅     |      |    ✅   |    ✅    |
 
 ## Bilan
