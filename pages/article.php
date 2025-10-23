@@ -5,6 +5,7 @@
 
 	if(is_null($article) OR !count($article)){
 		header('Location:index.php');
+		exit(); // ← CRITICAL: Stop execution after redirect
 	}
 ?>	
 <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">

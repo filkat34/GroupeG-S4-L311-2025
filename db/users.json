@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "login_hash": "$2y$10$j7Vnh4gGltuyfPIGXzPtV.pOZuNWQwA4CdhSnd3MC/y2gyQR5jsma",
+      "password_hash": "$2y$10$dDwL7aH5LKE.7T8wgs0oFuvmtgBT4d6iudD3ze8rSDwdsnoZa9b8S",
+      "role": "administrator",
+      "created_at": "2025-10-23",
+      "active": true,
+      "last_login": null,
+      "login_attempts": 0
+    }
+  ],
+  "config": {
+    "max_login_attempts": 5,
+    "session_timeout": 3600,
+    "require_secure_password": true,
+    "lockout_duration": 900
+  }
+}

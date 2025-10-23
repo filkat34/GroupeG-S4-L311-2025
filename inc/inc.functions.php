@@ -1,19 +1,43 @@
 <?php
+    // Secure session configuration
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.use_only_cookies', 1);
+    ini_set('session.cookie_samesite', 'Strict');
+    
     session_start();
 
     define('TL_ROOT', dirname(__DIR__));
-    define('LOGIN', 'UEL311');
-    define('PASSWORD', 'U31311');
     define('DB_ARTICLES', TL_ROOT.'/db/articles.json');
+    define('DB_USERS', TL_ROOT.'/db/users.json');
 
     function connectUser($login = null, $password = null){
         if(!is_null($login) && !is_null($password)){
-            if($login === LOGIN && $password === PASSWORD){
-                return array(
-                    'login'    => LOGIN,
-                    'password' => PASSWORD
-                );
+            $users = getUsersFromJson();
+            
+            if($users && isset($users['users'])) {
+                foreach($users['users'] as $user) {
+                    if($user['active'] && 
+                       password_verify($login, $user['login_hash']) && 
+                       password_verify($password, $user['password_hash'])) {
+                        
+                        return array(
+                            'user_id' => $user['id'],
+                            'username' => $user['username'],
+                            'role' => $user['role'],
+                            'authenticated' => true,
+                            'login_time' => time()
+                        );
+                    }
+                }
             }
+        }
+        return null;
+    }
+
+    function getUsersFromJson(){
+        if(file_exists(DB_USERS)) {
+            $contenu_json = file_get_contents(DB_USERS);
+            return json_decode($contenu_json, true);
         }
         return null;
     }
@@ -27,6 +51,17 @@
         if(array_key_exists('User', $_SESSION) 
                 && !is_null($_SESSION['User'])
                     && !empty($_SESSION['User'])){
+            
+            // Check session timeout (1 hour = 3600 seconds)
+            if(isset($_SESSION['User']['login_time'])) {
+                $session_duration = time() - $_SESSION['User']['login_time'];
+                if($session_duration > 3600) {
+                    // Session expired, destroy it
+                    setDisconnectUser();
+                    return false;
+                }
+            }
+            
             return true;
         }
         return false;

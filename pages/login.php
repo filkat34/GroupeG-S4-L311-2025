@@ -7,6 +7,7 @@
 
 	    		if(!is_null($_SESSION['User'])){
 	    			header("Location:index.php");
+	    			exit(); // ← CRITICAL: Stop execution after redirect
 	    		}else{
 	    			$message = "Mauvais login ou mot de passe";
 	    		}

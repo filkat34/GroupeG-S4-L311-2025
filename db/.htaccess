@@ -1,0 +1,9 @@
+# Deny direct access to database files
+<Files "*.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Alternative - deny all access
+# Order Deny,Allow
+# Deny from all
