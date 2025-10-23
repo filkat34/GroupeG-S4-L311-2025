@@ -11,29 +11,30 @@
 	</div>
 </section>
 
-<?php 
-	$_articles = getArticlesFromJson();
+<?php
+$_articles = getArticlesFromJson();
 
-	if($_articles && count($_articles)){
-		$compteur = 1;
-		foreach($_articles as $article){
-			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-			##$compteur++;
-			?>
-				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
-					<div class="content">
-						<h2><?php echo $article['titre'];?></h2>
-						<p><?php echo $article['titre'];?></p>
-						<ul class="actions stacked">
-							<li><a href="?page=article&id=<?php echo $article['id'];?>" class="button">Lire la suite</a></li>
-						</ul>
-					</div>
-					<div class="image">
-						<img src="<?php echo $art_icle['image'];?>" alt="" />
-					</div>
-				</section>
+if ($_articles && count($_articles)) {
+	$compteur = 1;
+	foreach ($_articles as $article) {
+		$classCss = ($compteur % 2 == 0 ? 'left' : 'right'); //si compteur nombre pair alors left sinon right
+		$compteur++; //problème d'incrémentation
+?>
+		<section class="spotlight style1 orient-<?php echo $classCss; ?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
+			<div class="content">
+				<h2><?php echo $article['titre']; ?></h2>
+				<p><?php echo $article['texte']; ?></p> <!-- correction variable json -->
+				<ul class="actions stacked">
+					<li><a href="?page=article&id=<?php echo $article['id']; ?>" class="button">Lire la suite</a></li>
+				</ul>
+			</div>
+			<div class="image">
+				<img src="<?php echo $article['image'];
+							?>" alt="" />
+			</div>
+		</section> <!-- correction variable mal écrite -->
 
-			<?php
-		}
+<?php
 	}
+}
 ?>

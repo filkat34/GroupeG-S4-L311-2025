@@ -1,4 +1,13 @@
-<?php includ 'inc/inc.functions.php'; ?>
+<?php
+// Activation de l'affichage des erreurs sur navigateur
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL); //suppression E_STRICT car compris dans E_ALL avec PHP8
+
+include 'inc/inc.functions.php'; // correction erreur de syntaxe
+include 'inc/inc.css.php'; // regroupement pour segmentation code fonctionnement et d'affichage
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -6,25 +15,29 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Story by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<?php include 'inc/inc.css.php'; ?>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="divided">
-				<?php 
-					getPagesTemplate(
-						array_key_exist('page', $_GET) ? $_GET['page'] : null
-					); 
-				?>
-				<?php include 'inc/tpls-footer.php'; ?>
-			</div>
+<head>
+	<title>Story by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+</head>
 
-		<?php includes 'inc/inc.js.php'; ?>
+<body class="is-preload">
 
-	</body>
+	<!-- Wrapper -->
+	<div id="wrapper" class="divided">
+		<?php
+		getPageTemplate( //correction erreur de syntaxe fonction
+			array_key_exists('page', $_GET) ? $_GET['page'] : null //correction erreur de syntaxe
+		);
+		?>
+		<?php include 'inc/tpl-footer.php'; // correction chemin fichier
+		?>
+	</div>
+
+	<?php include 'inc/inc.js.php'; // correction erreur de syntaxe 
+	?>
+
+</body>
+
 </html>

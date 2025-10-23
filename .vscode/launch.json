@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Écouter Xdebug (port 9003)",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "pathMappings": {
+                "/Users/mathildechauvet/Desktop/DEUST WMI + LP MIAW/3A/UE311 - OUTILS DEV/PÉRIODE 4 - DÉBUG CÔTE SERVEUR BACK-END PHP/DEVOIR 311 P4/GroupeG-S4-L311-2025": "${workspaceFolder}"
+            }
+        }
+    ]
+}
