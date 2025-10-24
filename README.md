@@ -47,7 +47,7 @@ Le projet a été cloné sur un dépôt public github. Chaque membre a créé sa
 | Dates       | Objectif                                                                                                                                                          |
 | :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 20/10-24/10 | **Période de débogage** dans la branche de chaque développeur : _bugfix/nomdudev_                                                                                 |
-| 25/10       | **Code review en visio** pour discussion autour des pull requests, merge dans main et **finalisation de la rédaction du CR** dans le README.md de la branche main |
+| 24/10       | **Code review en visio** pour discussion autour des pull requests, merge dans main et **finalisation de la rédaction du CR** dans le README.md de la branche main |
 
 ## Méthodes de débogage
 
