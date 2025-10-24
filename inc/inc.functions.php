@@ -4,7 +4,7 @@
     define('TL_ROOT', dirname(__DIR__));
     define('LOGIN', 'UEL311');
     define('PASSWORD', 'U31311');
-    define('DB_ARTICLES', TL_ROOT.'/dbal/articles.json');
+    define('DB_ARTICLES', TL_ROOT.'/db/articles.json');
 
     function connectUser($login = null, $password = null){
         if(!is_null($login) && !is_null($password)){
@@ -20,7 +20,7 @@
 
     function setDisconnectUser(){
          unset($_SESSION['User']);
-         sessions_destroy();
+         session_destroy();
     }
 
     function isConnected(){
@@ -33,27 +33,29 @@
     }
 
     function getPageTemplate($page = null){
-        $fichier = TL_ROOT.'/pages/'.(is_null($page) ? 'index.php' : $page.'.php');
+        // construit le chemin du fichier de page demandé (par défaut pages/pages.php)
+        $fichier = TL_ROOT.'/pages/'.(is_null($page) ? 'pages.php' : $page.'.php');
 
         if(!file_exists($fichier)){
-            inclde TL_ROOT.'/pages/index.php';
+            // si le fichier demandé n'existe pas, afficher la page principale (pages/index.php)
+            include TL_ROOT. '/pages/index.php';
         }else{
             include $fichier;
         }
     }
 
     function getArticlesFromJson(){
-        if(file_exist(DB_ARTICLE)) {
-            $contenu_json = file_get_contents(DB_ARTICLE);
+        if(file_exists(DB_ARTICLES)) {
+            $contenu_json = file_get_contents(DB_ARTICLES);
             return json_decode($contenu_json, true);
         }
 
         return null;
     }
 
-    function getArticleById($id_article == null){
-       if(file_exists(DB_ARTICLE)) {
-            $contenu_json = file_get_contents(DB_ARTICLE);
+    function getArticleById($id_article = null){
+       if(file_exists(DB_ARTICLES)) {
+            $contenu_json = file_get_contents(DB_ARTICLES);
             $_articles    = json_decode($contenu_json, true);
 
             foreach($_articles as $article){
