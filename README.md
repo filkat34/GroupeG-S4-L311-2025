@@ -46,7 +46,7 @@ Le projet a été cloné sur un dépôt public github. Chaque membre a créé sa
 
 | Dates       | Objectif                                                                                                                                                          |
 | :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 20/10-24/10 | **Période de débogage** dans la branche de chaque développeur : _bugfix/nomdudev_                                                        |
+| 20/10-24/10 | **Période de débogage** dans la branche de chaque développeur : _bugfix/nomdudev_                                                                                 |
 | 25/10       | **Code review en visio** pour discussion autour des pull requests, merge dans main et **finalisation de la rédaction du CR** dans le README.md de la branche main |
 
 ## Méthodes de débogage
@@ -69,15 +69,22 @@ L'essentiel des bugs a été identifié grâce à l'outil _Xdebug_ qui fournit d
 
 ![erreur Parse error](screenshots/xdebug3.png)
 
-### Affichage des erreurs dans le navigateur et journalisation des logs 
+### Affichage des erreurs dans le navigateur et journalisation des logs
+
 L’affichage des erreurs et la journalisation des logs ont été configurés à deux niveaux complémentaires. D’une part, via le php.ini, pour une capture et un affichage des erreurs sur l’ensemble de l’environnement. D’autre part, de manière locale directement dans les scripts PHP à l’aide de ini_set et error_log (tracage ciblé des logs et centralisation dans un fichier php_error.log).
 
 #### Configuration globale via le php.ini
+
+![configuration php.ini](screenshots/Configuration%20logs%20php.ini.png)
+![affichage d'erreur navigateur](screenshots/affichage%20log%20navigateur.png)
+
 #### Configuration locale du projet directement dans les scripts php
 
-
+![activation affichage et enregistrement des logs](screenshots/Activation%20de%20l'affichage%20et%20de%20l'enregistrement.png)
+![journalisation logs](screenshots/journalisation%20logs%20à%20la%20racine.png)
 
 ### Inspecteur du navigateur
+
 L'inspecteur du navigateur est toujours une référence précieuse lors des séances de débogage. Il a par exemple révélé une faille de sécurité majeure : le login et mot de passe sont transmis en clair vers le serveur, ce qui rend possible leur interception.
 
 ![erreur : Credentials security breach](screenshots/credentialsExposed.png)
@@ -121,8 +128,8 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 
 ### Sécurité
 
-| Bug                                            | Correction                                     | Explication                                                       |
-| :--------------------------------------------- | :--------------------------------------------- | :---------------------------------------------------------------- |
+| Bug                                                       | Correction                                                                                                                                                                                                                                                                     | Explication                                                                                                                                                       |
+| :-------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `define('LOGIN', 'UEL311');define('PASSWORD', 'U31311');` | Création d'une table spécifique dans le dossier _db_ simulant la base de données : `users.json` + Encodage en base64 du payload de la forme contenant le login et le mot de passe avant transmission au serveur : `document.getElementById('secure_data').value = btoa(data);` | L'identifiant et le mot de passe étaient codés en dur côté serveur et transmis en clair depuis le client. L'encodage proposé offre un niveau de sécurité minimal. |
 
 ![encodage64](screenshots/base64.png)
@@ -131,37 +138,37 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 
 | Fonctionnalité/Branche                                                                                                         | Mathilde | Kamo | Mathieu | Filippos |
 | :----------------------------------------------------------------------------------------------------------------------------- | :------: | :--: | :-----: | :------: |
-| La page d'accueil s'affiche sans erreurs PHP                                                                                   |    ✅     |   ✅  |    ✅   |    ✅    |
-| Les CSS et JS se chargent correctement (pas d'erreurs 404 dans la console)                                                     |    ✅     |   ✅  |    ✅   |    ✅    |
-| Les images de la bannière s'affichent correctement                                                                             |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le design est responsive                                                                                                       |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le titre "Mon [ blog ]." s'affiche correctement dans la bannière                                                               |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le texte de description s'affiche dans la bannière                                                                             |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Consulter mes articles" est visible dans la bannière                                                                |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Consulter mes articles" redirige vers le premier article                                                            |           |       |    ✅   |    ✅    |
-| L'image de bannière s'affiche                                                                                                  |    ✅     |   ✅  |    ✅   |    ✅    |
-| La liste des articles consultables s’affiche correctement                                                                      |    ✅     |   ✅  |    ✅   |    ✅    |
-| Chaque article affiche son titre                                                                                               |    ✅     |   ✅  |    ✅   |    ✅    |
-| Chaque article affiche un extrait (et non le titre dupliqué)                                                                   |    ✅     |      |    ✅   |    ✅    |
-| Chaque article affiche son image                                                                                               |    ✅     |   ✅  |    ✅   |    ✅    |
-| Les articles alternent entre orientation gauche/droite                                                                         |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Lire la suite" est présent pour chaque article                                                                      |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Lire la suite" renvoie correctement vers la page de l’article concerné                                              |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le titre de l'article s'affiche correctement sur la page de l’article                                                          |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le texte complet s'affiche sur la page de l’article                                                                            |    ✅     |   ✅  |    ✅   |    ✅    |
-| L'image s'affiche sur la page de l’article                                                                                     |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Revenir à l'accueil" est présent sur la page de l’article                                                           |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Revenir à l'accueil" redirige vers l’accueil sur la page de l’article                                               |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Se connecter" s’affiche sur la page d’accueil et sur la page d’un article ouvert                                    |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le formulaire de connexion s’ouvre quand on clique sur "Se connecter"                                                          |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le formulaire de connexion s'affiche correctement                                                                              |    ✅     |   ✅  |    ✅   |    ✅    |
-| Les champs "Nom d'utilisateur" et "Mot de passe" sont présents dans le formulaire de connexion                                 |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Se connecter" est présent                                                                                           |    ✅     |   ✅  |    ✅   |    ✅    |
-| Le bouton "Revenir à l'accueil" dans le formulaire de connexion fonctionne                                                     |    ✅     |   ✅  |    ✅   |    ✅    |
-| Connexion réussie avec login: _UEL311_ et password: _U31311_                                                                   |    ✅     |   ✅  |    ✅   |    ✅    |
-| Après connexion réussie, redirection vers l'accueil mais avec le bouton "Se déconnecter" qui apparaît en haut à droite         |    ✅     |   ✅  |    ✅   |    ✅    |
-| Connexion avec mauvais login/password affiche le message "Mauvais login ou mot de passe"                                       |    ✅     |   ✅  |    ✅   |    ✅    |
-| Il est impossible de récupérer lors de la connexion le mot de passe depuis l'inspecteur du navigateur.                         |           |      |         |    ✅    |
-| Cliquer sur « Se déconnecter » déclenche la déconnexion et redirige vers l'accueil avec le bouton qui change en "Se connecter" |    ✅     |   ✅  |    ✅   |    ✅    |
+| La page d'accueil s'affiche sans erreurs PHP                                                                                   |    ✅    |  ✅  |   ✅    |    ✅    |
+| Les CSS et JS se chargent correctement (pas d'erreurs 404 dans la console)                                                     |    ✅    |  ✅  |   ✅    |    ✅    |
+| Les images de la bannière s'affichent correctement                                                                             |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le design est responsive                                                                                                       |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le titre "Mon [ blog ]." s'affiche correctement dans la bannière                                                               |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le texte de description s'affiche dans la bannière                                                                             |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Consulter mes articles" est visible dans la bannière                                                                |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Consulter mes articles" redirige vers le premier article                                                            |          |      |   ✅    |    ✅    |
+| L'image de bannière s'affiche                                                                                                  |    ✅    |  ✅  |   ✅    |    ✅    |
+| La liste des articles consultables s’affiche correctement                                                                      |    ✅    |  ✅  |   ✅    |    ✅    |
+| Chaque article affiche son titre                                                                                               |    ✅    |  ✅  |   ✅    |    ✅    |
+| Chaque article affiche un extrait (et non le titre dupliqué)                                                                   |    ✅    |      |   ✅    |    ✅    |
+| Chaque article affiche son image                                                                                               |    ✅    |  ✅  |   ✅    |    ✅    |
+| Les articles alternent entre orientation gauche/droite                                                                         |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Lire la suite" est présent pour chaque article                                                                      |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Lire la suite" renvoie correctement vers la page de l’article concerné                                              |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le titre de l'article s'affiche correctement sur la page de l’article                                                          |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le texte complet s'affiche sur la page de l’article                                                                            |    ✅    |  ✅  |   ✅    |    ✅    |
+| L'image s'affiche sur la page de l’article                                                                                     |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Revenir à l'accueil" est présent sur la page de l’article                                                           |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Revenir à l'accueil" redirige vers l’accueil sur la page de l’article                                               |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Se connecter" s’affiche sur la page d’accueil et sur la page d’un article ouvert                                    |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le formulaire de connexion s’ouvre quand on clique sur "Se connecter"                                                          |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le formulaire de connexion s'affiche correctement                                                                              |    ✅    |  ✅  |   ✅    |    ✅    |
+| Les champs "Nom d'utilisateur" et "Mot de passe" sont présents dans le formulaire de connexion                                 |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Se connecter" est présent                                                                                           |    ✅    |  ✅  |   ✅    |    ✅    |
+| Le bouton "Revenir à l'accueil" dans le formulaire de connexion fonctionne                                                     |    ✅    |  ✅  |   ✅    |    ✅    |
+| Connexion réussie avec login: _UEL311_ et password: _U31311_                                                                   |    ✅    |  ✅  |   ✅    |    ✅    |
+| Après connexion réussie, redirection vers l'accueil mais avec le bouton "Se déconnecter" qui apparaît en haut à droite         |    ✅    |  ✅  |   ✅    |    ✅    |
+| Connexion avec mauvais login/password affiche le message "Mauvais login ou mot de passe"                                       |    ✅    |  ✅  |   ✅    |    ✅    |
+| Il est impossible de récupérer lors de la connexion le mot de passe depuis l'inspecteur du navigateur.                         |          |      |         |    ✅    |
+| Cliquer sur « Se déconnecter » déclenche la déconnexion et redirige vers l'accueil avec le bouton qui change en "Se connecter" |    ✅    |  ✅  |   ✅    |    ✅    |
 
 ## Bilan
