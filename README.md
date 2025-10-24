@@ -69,6 +69,14 @@ L'essentiel des bugs a été identifié grâce à l'outil _Xdebug_ qui fournit d
 
 ![erreur Parse error](screenshots/xdebug3.png)
 
+### Affichage des erreurs dans le navigateur et journalisation des logs 
+L’affichage des erreurs et la journalisation des logs ont été configurés à deux niveaux complémentaires. D’une part, via le php.ini, pour une capture et un affichage des erreurs sur l’ensemble de l’environnement. D’autre part, de manière locale directement dans les scripts PHP à l’aide de ini_set et error_log (tracage ciblé des logs et centralisation dans un fichier php_error.log).
+
+#### Configuration globale via le php.ini
+#### Configuration locale du projet directement dans les scripts php
+
+
+
 ### Inspecteur du navigateur
 L'inspecteur du navigateur est toujours une référence précieuse lors des séances de débogage. Il a par exemple révélé une faille de sécurité majeure : le login et mot de passe sont transmis en clair vers le serveur, ce qui rend possible leur interception.
 
