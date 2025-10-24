@@ -20,12 +20,12 @@
 
 ## Membres du groupe
 
-| Etudiant.e  |   Alias    |     Branche     |
-| :---------: | :--------: | :-------------: |
-| Mathilde C. | Clouddy23  | bugfix/mathilde |
-|   Kamo G.   | Spaghette5 |   bugfix/kamo   |
-| Mathieu L.  |  mathleys  | bugfix/mathieu  |
-| Filippos K. |  filkat34  | bugfix/filippos |
+| Etudiant.e  |   Alias    |     Branche     | Déployé sur |
+| :---------: | :--------: | :-------------: | :-------------: |
+| Mathilde C. | Clouddy23  | bugfix/mathilde |                 |
+|   Kamo G.   | Spaghette5 |   bugfix/kamo   |                 |
+| Mathieu L.  |  mathleys  | bugfix/mathieu  |                 |
+| Filippos K. |  filkat34  | bugfix/filippos | [https://katsanos1.hosting.unilim.fr/git/GroupeG-S4-L311-2025/index.php](https://katsanos1.hosting.unilim.fr/git/GroupeG-S4-L311-2025/index.php)|
 
 ## Objectifs
 
