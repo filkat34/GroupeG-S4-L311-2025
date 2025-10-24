@@ -1,5 +1,6 @@
 <?php 
 $message = null;
+// traitement du formulaire de connexion
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
     	if(!empty($_POST['login']) && !empty($_POST['password'])){
@@ -22,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<section>
 				<header>
 					<h3>Se connecter</h3>
-					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a></li>
+					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a>
 				</header>
 				<div class="content">
 					<?php echo (!is_null($message) ? "<p>".$message."</p>" : '');?>

@@ -33,9 +33,11 @@
     }
 
     function getPageTemplate($page = null){
+        // construit le chemin du fichier de page demandé (par défaut pages/pages.php)
         $fichier = TL_ROOT.'/pages/'.(is_null($page) ? 'pages.php' : $page.'.php');
 
         if(!file_exists($fichier)){
+            // si le fichier demandé n'existe pas, afficher la page principale (pages/index.php)
             include TL_ROOT. '/pages/index.php';
         }else{
             include $fichier;

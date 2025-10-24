@@ -2,12 +2,14 @@
 <footer class="wrapper style1 align-center">
 	<div class="inner">	
 		<p>Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		<!-- Petit commentaire : pied de page minimal -->
 	</div>
 </footer>
 
 <!-- Sticky -->	
 <span class="sticky">
 	<?php 
+		// bouton de connexion/déconnexion selon l'état de session
 		if(!isConnected()){		// si déconnecté
 			?>
 				<a class="button fit" href="?page=login" title="Se connecter à l'administration du blog">

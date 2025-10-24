@@ -18,7 +18,7 @@
 		$compteur = 1;
 		foreach($_articles as $article){
 			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-			##$compteur++;
+			// le compteur sera incrémenté à la fin de la boucle (pour alterner gauche/droite)
 			?>
 				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" <?php if($compteur == 1) { echo 'id="first"'; } ?>>
 					<div class="content">
