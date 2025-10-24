@@ -171,7 +171,7 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 | Le titre "Mon [ blog ]." s'affiche correctement dans la bannière                                                               |    ✅    |  ✅  |   ✅    |    ✅    |
 | Le texte de description s'affiche dans la bannière                                                                             |    ✅    |  ✅  |   ✅    |    ✅    |
 | Le bouton "Consulter mes articles" est visible dans la bannière                                                                |    ✅    |  ✅  |   ✅    |    ✅    |
-| Le bouton "Consulter mes articles" redirige vers le premier article                                                            |          |      |   ✅    |    ✅    |
+| Le bouton "Consulter mes articles" redirige vers le premier article                                                            |          |   ✅  |   ✅    |    ✅    |
 | L'image de bannière s'affiche                                                                                                  |    ✅    |  ✅  |   ✅    |    ✅    |
 | La liste des articles consultables s’affiche correctement                                                                      |    ✅    |  ✅  |   ✅    |    ✅    |
 | Chaque article affiche son titre                                                                                               |    ✅    |  ✅  |   ✅    |    ✅    |
