@@ -172,11 +172,11 @@ Les erreurs typographiques (fautes de frappe) ont été les plus nombreuses. Par
 | Cliquer sur « Se déconnecter » déclenche la déconnexion et redirige vers l'accueil avec le bouton qui change en "Se connecter" |    ✅    |  ✅  |   ✅    |    ✅    |
 
 ## Bilan
-Les objectifs fixés pour cette semaine ont été atteints dans leur intégralité. Le site du blog a été rendu fonctionnel, avec un affichage correct des articles, des images et des éléments interactifs, ainsi qu’un formulaire de connexion opérationnel et sécurisé. Toutes les fonctionnalités prévues ont été testées manuellement et validées sur les différentes branches.
+Les objectifs fixés pour cette semaine ont été atteints dans leur intégralité. Le blog a été rendu fonctionnel, avec un affichage correct des articles, des images et des éléments interactifs, ainsi qu’un formulaire de connexion opérationnel et sécurisé. Toutes les fonctionnalités ont été testées manuellement et validées sur les différentes branches.
 
-Chaque membre du groupe a fait preuve d’implication dans le travail demandé. Les échanges ont été réguliers, que ce soit lors de la visio de code review sur Teams ou via les communications sur WhatsApp, favorisant l’entraide et la montée en compétences. À la demande de Mathilde Chauvet, Filippos Katsanos a partagé ses connaissances sur la maîtrise de l’outil Xdebug, renforçant ainsi les compétences collectives sur le débogage côté serveur.
+Chaque membre du groupe a fait preuve d’implication dans le travail demandé. Les échanges ont été réguliers, que ce soit en visio de code review sur Teams ou via les communications sur WhatsApp. À la demande de Mathilde Chauvet, Filippos Katsanos a partagé ses connaissances sur la maîtrise de l’outil Xdebug, renforçant ainsi les compétences collectives sur le débogage côté serveur.
 
-L’ensemble du groupe maîtrise désormais la méthodologie de débogage pour les fichiers PHP :
+L’ensemble du groupe maîtrise la méthodologie de débogage côté serveur pour les fichiers PHP :
 - préparation de l’environnement PHP ;
 - activation de l’affichage des erreurs sur un navigateur ;
 - journalisation des logs ;
