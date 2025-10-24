@@ -203,17 +203,17 @@ Les objectifs fixés pour cette semaine ont été atteints dans leur intégralit
 Chaque membre du groupe a fait preuve d’implication dans le travail demandé. Les échanges ont été réguliers, que ce soit en visio de code review sur Teams ou via les communications sur WhatsApp. À la demande de Mathilde Chauvet, Filippos Katsanos a partagé ses connaissances sur la maîtrise de l’outil Xdebug, renforçant ainsi les compétences collectives sur le débogage côté serveur.
 
 L’ensemble du groupe maîtrise la méthodologie de débogage côté serveur pour les fichiers PHP :
-- préparation de l’environnement PHP ;
-- activation de l’affichage des erreurs sur un navigateur ;
-- journalisation des logs ;
-- séparation claire entre le code de traitement et le code d’affichage pour faciliter le suivi des erreurs et améliorer la lisibilité ;
-- utilisation de var_dump() et print_r() pour inspecter les variables et structures de données, et de file_exists() ou error_log() pour confirmer l’existence des fichiers.
-- sécurisation du traitement du code susceptible de lancer des exceptions avec des blocs try/catch ;
-- utilisation d’outils d’analyse d’erreurs comme Xdebug ;
-- ajout de commentaires pour documenter chaque manipulation de debug, facilitant leur suppression avant la mise en production.
+- Préparation de l’environnement PHP ;
+- Activation de l’affichage des erreurs sur un navigateur ;
+- Journalisation des logs ;
+- Séparation claire entre le code de traitement et le code d’affichage pour faciliter le suivi des erreurs et améliorer la lisibilité ;
+- Utilisation de var_dump() et print_r() pour inspecter les variables et structures de données, et de file_exists() ou error_log() pour confirmer l’existence des fichiers.
+- Sécurisation du traitement du code susceptible de lancer des exceptions avec des blocs try/catch ;
+- Utilisation d’outils d’analyse d’erreurs comme Xdebug ;
+- Ajout de commentaires pour documenter chaque manipulation de debug, facilitant leur suppression avant la mise en production.
 
 Même si le projet a été réalisé dans un délai restreint et avec un nombre limité de fichiers, le groupe pourrait encore améliorer son efficacité en approfondissant la maîtrise de certains outils et pratiques de débogage :
-- exploitation avancée de l’application Xdebug pour tracer et analyser l’exécution du code ;
-- utilisation complète de l’extension FirePHP pour suivre les logs directement dans la console du navigateur ;
-- manipulation régulière des commandes PHP telles que var_dump(), print_r() et error_log() pour un diagnostic plus précis et un suivi ciblé des événements ;
-- intégration de solutions de tests unitaires, qui n’ont pas été employées pour ce projet, afin de garantir la robustesse et la maintenabilité du code sur le long terme.
+- Exploitation avancée de l’application Xdebug pour tracer et analyser l’exécution du code ;
+- Utilisation complète de l’extension FirePHP pour suivre les logs directement dans la console du navigateur ;
+- Manipulation régulière des commandes PHP telles que var_dump(), print_r() et error_log() pour un diagnostic plus précis et un suivi ciblé des événements ;
+- Intégration de solutions de tests unitaires, qui n’ont pas été employées pour ce projet, afin de garantir la robustesse et la maintenabilité du code sur le long terme.
