@@ -81,7 +81,6 @@ L’affichage des erreurs et la journalisation des logs ont été configurés à
 #### Configuration locale du projet directement dans les scripts php
 
 ![activation affichage et enregistrement des logs](screenshots/Activation%20de%20l'affichage%20et%20de%20l'enregistrement.png)
-![journalisation logs](screenshots/journalisation%20logs%20à%20la%20racine.png)
 
 ### Inspecteur du navigateur
 
