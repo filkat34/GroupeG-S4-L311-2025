@@ -7,7 +7,7 @@ include 'inc/inc.functions.php';
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html lang="fr">
+<html lang="en">
 	<head>
 		<title>Story by HTML5 UP</title>
 		<meta charset="utf-8" />
