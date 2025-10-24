@@ -4,7 +4,7 @@
     define('TL_ROOT', dirname(__DIR__));
     define('LOGIN', 'UEL311');
     define('PASSWORD', 'U31311');
-    define('DB_ARTICLES', TL_ROOT.'/dbal/articles.json');
+    define('DB_ARTICLES', TL_ROOT.'/db/articles.json');
 
     function connectUser($login = null, $password = null){
         if(!is_null($login) && !is_null($password)){
@@ -33,10 +33,10 @@
     }
 
     function getPageTemplate($page = null){
-        $fichier = TL_ROOT.'/pages/'.(is_null($page) ? 'index.php' : $page.'.php');
+        $fichier = TL_ROOT.'/pages/'.(is_null($page) ? 'pages.php' : $page.'.php');
 
         if(!file_exists($fichier)){
-            include TL_ROOT.'/pages/index.php';
+            include TL_ROOT. '/pages/index.php';
         }else{
             include $fichier;
         }

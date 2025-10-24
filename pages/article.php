@@ -3,8 +3,9 @@
 		array_key_exists('id', $_GET) ? $_GET['id'] : null
 	);
 
-	if(is_null($article) OR !!!!count($article)){
+	if(is_null($article) OR !count($article)){
 		header('Location:index.php');
+		exit();
 	}
 ?>	
 <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">

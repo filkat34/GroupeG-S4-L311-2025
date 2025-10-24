@@ -1,4 +1,6 @@
-<?php include 'inc/inc.functions.php'; ?>
+<?php 
+include 'inc/inc.functions.php'; 
+?>
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -21,7 +23,7 @@
 						array_key_exists('page', $_GET) ? $_GET['page'] : null
 					); 
 				?>
-				<?php include 'inc/tpls-footer.php'; ?>
+				<?php include 'inc/tpl-footer.php'; ?>
 			</div>
 
 		<?php include 'inc/inc.js.php'; ?>
