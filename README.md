@@ -54,18 +54,45 @@ Le projet a été cloné sur un dépôt public github. Chaque membre a créé sa
 Pour identifier et corriger les problèmes, plusieurs méthodes de debug ont été employées.
 
 ### Xdebug
+L'essentiel des bugs a été identifié grâce à l'outil _Xdebug_ qui fournit des informations très précises sur l'origine des erreurs. Ci-dessous, un rapide tuto pour la mise en place de _Xdebug_ sur l'environnement docker puis, à titre d'exemples quelques captures d'écran concernant trois types d'erreurs différents.
 
-L'essentiel des bugs a été identifié grâce à l'outil _Xdebug_ qui fournit des informations très précises sur l'origine des erreurs. A titre d'exemples, voici quelques captures d'écran concernant trois types d'erreurs différents :
+#### Mise en place de Xdebug sur la pile LAMP de l'environnement docker (Hosting)
 
-#### Une coquille sur le nom d'une variable
+##### Installation
+`apt-get install php-xdebug`
+
+##### Création d'une page d'informations sur Xdebug
+Création d'un fichier `xdebug_info.php` dans lequel il faut appeler la fonction `xdebug_info();` pour afficher les informations.
+
+Une fois sur cette page, le diagnostic indique une erreur de configuration du port d'écoute (par défaut à 9003 inexistant sur la configuration docker donnée).
+
+##### Trouver le chemin vers le fichier xdebug.ini
+
+`php --ini` puis repérer le chemin vers xdebug.ini (normalement `/etc/php/8.1/cli/conf.d/20-xdebug.ini`)
+
+##### Trouver les adresses et ports d'apache sur la configuration hosting
+
+`ss -tunlp` puis repérer l'adresse(127.0.0.11) et le port (80) du serveur apache
+
+##### Modifier le fichier _xdebug.ini_ en fonction
+
+`nano /etc/php/8.1/cli/conf.d/20-xdebug.ini` puis dans le fichier renseigner l'adresse et le port du serveur apache :
+`zend_extension=xdebug.so
+xdebug.mode=develop
+xdebug.start_with_request=yes
+xdebug.client_port=80
+xdebug.client_host=127.0.0.11`
+
+#### Exemples de bugs identifiés par _Xdebug_
+##### Une coquille sur le nom d'une variable
 
 ![erreur : Undefined variable](screenshots/xdebug1.png)
 
-#### Une coquille dans le nom d'une fonction lors de son appel
+##### Une coquille dans le nom d'une fonction lors de son appel
 
 ![erreur : Undefined function](screenshots/xdebug2.png)
 
-#### Une erreur de syntaxe confondant assignation et comparaison de variables
+##### Une erreur de syntaxe confondant assignation et comparaison de variables
 
 ![erreur Parse error](screenshots/xdebug3.png)
 
@@ -73,12 +100,12 @@ L'essentiel des bugs a été identifié grâce à l'outil _Xdebug_ qui fournit d
 
 L’affichage des erreurs et la journalisation des logs ont été configurés à deux niveaux complémentaires. D’une part, via le php.ini, pour une capture et un affichage des erreurs sur l’ensemble de l’environnement. D’autre part, de manière locale directement dans les scripts PHP à l’aide de ini_set et error_log (tracage ciblé des logs et centralisation dans un fichier php_error.log).
 
-#### Configuration globale via le php.ini
+### Configuration globale via le php.ini
 
 ![configuration php.ini](screenshots/Configuration%20logs%20php.ini.png)
 ![affichage d'erreur navigateur](screenshots/affichage%20log%20navigateur.png)
 
-#### Configuration locale du projet directement dans les scripts php
+### Configuration locale du projet directement dans les scripts php
 
 ![activation affichage et enregistrement des logs](screenshots/Activation%20de%20l'affichage%20et%20de%20l'enregistrement.png)
 
