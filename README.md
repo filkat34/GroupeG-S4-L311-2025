@@ -8,7 +8,7 @@
   - 🛠️ [Outils](#outils)
   - 📋 [Principe général](#principe-général)
 - 🗓️ [Planning de la semaine](#planning-de-la-semaine)
-- 🐞 [Méthodes de débogage employées](#méthodes-de-débogage-employées)
+- 🐞 [Méthodes de débogage](#méthodes-de-débogage)
 - 🗃️ [Typologie des erreurs](#typologie-des-erreurs)
   - 📄 [Fichiers](#fichiers)
   - 🧩 [Syntaxe](#syntaxe)
