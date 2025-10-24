@@ -1,14 +1,22 @@
-<?php 
+<?php
+    // Initialisation de la variable pour les divers messages
 	$message = null;
-	if($_SERVER["RQUEST_METHOD"] == "POST"){
-	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
-	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
-	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
 
+    // Traitement du formulaire de connexion
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
+        // Vérification de la présence des champs login et password
+	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
+            // On vérifie que les champs ne sont pas vides
+	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
+                // On connecte l'utilisateur
+	    		$_SESSION['User'] = connectUser($_POST['login'], $_POST['password']);
+
+                // Si la connexion a réussi, on redirige vers l'accueil
 	    		if(!is_null($_SESSION['User'])){
 	    			header("Location:index.php");
+                    exit(); // Arrêt du script après la redirection
 	    		}else{
-	    			$message = "Mauvais login ou mot de passe";
+	    			$message = "Mauvais login ou mot de passe"; // Message d'erreur si la connexion a échouée
 	    		}
 	    	}
 	    }
@@ -21,7 +29,7 @@
 			<section>
 				<header>
 					<h3>Se connecter</h3>
-					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a></li>
+					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a>
 				</header>
 				<div class="content">
 					<?php echo (!is_null($message) ? "<p>".$message."</p>" : '');?>

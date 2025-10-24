@@ -1,5 +1,5 @@
 <?php
+    // On déconnecte l'utilisateur
 	setDisconnectUser();
-
-	header('Location:indx.php');
-?>
+	header('Location:index.php');
+    exit();
